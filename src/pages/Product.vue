@@ -1,29 +1,30 @@
 <template>
   <div>
-    <section className="bg-red-800">
-      <div className="w-4/5 mx-auto h-80 flex items-center">
-        <h1 className="text-9xl text-white ">Home</h1>
+    <section
+      className="bg-red-800"
+      :style="'background-image: url(' + p().imglink + '); background-size: cover; background-position:center;'"
+    >
+      <div className="w-4/5 mx-auto py-56 flex items-center">
+        <div class="-mb-96 bg-gray-900 text-white bg-opacity-60 py-10 px-8">
+          <h1 className="text-6xl ">$ {{ p().price }}</h1>
+          <h1 className="text-9xl ">{{ p().title }}</h1>
+        </div>
       </div>
     </section>
-    <main className="bg-gray-300 min-h-96">
+    <main className="bg-gray-900 min-h-96">
       <div class="mx-auto w-4/5">
-        <div class="grid grid-cols-3 gap-12 py-12">
-          <Card
-            v-for="product in products"
-            :key="product.id"
-            :id="product.id"
-            :title="product.title"
-            :price="product.price"
-            :imglink="product.imglink"
-          />
-        </div>
+        <div class="grid grid-cols-3 gap-12 py-12"></div>
       </div>
     </main>
   </div>
 </template>
 
 <script setup>
-import Card from "../components/Card.vue";
+import { useRoute } from "vue-router";
+
+let route = useRoute();
+// console.log(route.params.id);
+
 let products = [
   {
     id: 1,
@@ -86,4 +87,11 @@ let products = [
     imglink: "https://picsum.photos/1415/515",
   },
 ];
+
+function p() {
+  // find in array where id = params.id
+  let filtered_array = products.filter((product) => product.id == route.params.id);
+  // return first array object
+  return filtered_array[0];
+}
 </script>
