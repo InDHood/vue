@@ -1,3 +1,5 @@
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/640px-Vue.js_Logo_2.svg.png" style="height:50px; float: right;" />
+
 # Learning Vue
 
 Step 1: Install Vue thru Vite<br />
