@@ -1,0 +1,10 @@
+<template>
+  <div>
+    <section className=" bg-pink-700">
+      <div className="w-4/5 mx-auto h-80 flex items-center">
+        <h1 className="text-9xl text-white ">404 - Not Found</h1>
+      </div>
+    </section>
+    <main className="bg-gray-300 h-96"></main>
+  </div>
+</template>
